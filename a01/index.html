@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../apexcharts.min.js"></script>
+</head>
+<body>
+    
+    <div id="grafico"></div>
+
+<script>
+
+    let el = document.getElementById("grafico");
+    let options = {
+        chart: {
+            type: 'bar',
+            height: 500,
+            width: 600,
+        },
+        series:[
+            {
+                name: 'Participantes',
+                data: [{ x: 'Combate a Violencia', y: 54 }, { x: 'Combate ao racismo', y: 17 }, { x: 'Promoção da Equidade', y: 26 }, { x: 'Levantamento da Justiça', y: 77}]
+            }
+        ],
+        title: {
+            text: 'Quantidade de Participantes por Evento',
+            align: 'center',
+            style:{
+                FontSize: '24px',
+                color: '#333'
+            }
+        }
+    };
+
+    let chart = new ApexCharts(el, options);
+    chart.render();
+</script>
+
+<div id="grafico2" style="float: left; width: 30%; height: 300px;"></div>
+
+<script>
+    
+    let el2 = document.getElementById("grafico2");
+    let options2 = {
+        chart:{
+            type: 'pie',
+            height: 500,
+            weight: 600,
+        },
+        series: [44,55],
+        labels: ['Projetos', 'Campanhas'],
+
+        title: {
+            text: 'Tipos de Iniciativas',
+            align: 'center',
+            style:{
+                FontSize: '24px',
+                color: '#333'
+            }
+        },
+        colors: ['#FF69B4', '#9400D3']  
+    };
+
+    let chart2 = new ApexCharts(el2, options2);
+    chart2.render();
+</script>
+
+<div id="grafico3"></div>
+
+<script>
+
+    let el3 = document.getElementById("grafico3");
+    let options3 = {
+        chart:{
+            type: 'bar',
+            width: 700,
+            height: 500
+        },
+        series: [
+            {
+                name: 'Participantes Inscritos',
+                data: [62, 45, 75]
+            },
+            {
+                name: 'Participantes presentes',
+                data: [56, 22, 49]
+            }
+        ],
+        xaxis:{
+            categories: ['Luta pela Voz', 'Teste de Regressão', 'Maria da Penha Vai a Escola']
+        },
+        plotOptions:{
+            bar: {
+                horizontal: false,
+                datalabels: {
+                    position: 'top'
+                }
+            }
+        },
+        yaxis:{
+            min: 0,
+            max: 100
+        },
+        grid:{
+            show: true,
+            xaxis: {
+                lines: {
+                    show: true
+                }
+            }
+        },
+        title:{
+            text: 'Quantidade de Participantes por Iniciativas',
+            align: 'center',
+            style:{
+                FontSize: '24px',
+                color: '#333'
+            }
+        }
+    }
+
+    let chart3 = new ApexCharts(el3, options3);
+    chart3.render();
+</script>
+
+</body>
+</html>
